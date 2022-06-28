@@ -25,3 +25,32 @@ Reference: https://youtu.be/QLnO-B_lvJU
 Reference: https://youtu.be/nuFITSg28ng
 
 Till here we have changed our Console app to Empty Web API Template we get by default.
+
+
+# Web API Application
+
+## Controller Class
+- A controller class in Web API has a "Controller" suffix.
+- The controller class must be inherited from "ControllerBase" (The ControllerBase class provides many methods and properties to handle the HTTP request).
+- Use "ApiController" attribute on the controller.
+- Use attribute routing.
+
+### ApiContrroller attribute
+- Attribute routing requirement.
+- Handle the client error i.e. 400 status code.
+- Multipart/form-data request inference.
+- Bind the incoming data with the parameters using some more attributes.
+
+## Middleware
+- Middleware is a piece of code that is used in HTTP Request Pipeline.
+- Middleware Examples: Routing, Authentication, Adding Exception Page, etc.
+
+### Methods in Middleware
+#### 1. Run()  
+- Is used to complete the middleware execution.
+#### 2. Use() 
+- Is used to insert a new middleware in the pipeline.
+#### 3. Next()
+- Is used to pass the execution to the next middleware.
+#### 4. Map()
+- Is used to map the middleware to a specific URL.

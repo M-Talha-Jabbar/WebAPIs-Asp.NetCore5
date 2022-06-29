@@ -54,3 +54,12 @@ Till here we have changed our Console app to Empty Web API Template we get by de
 - Is used to pass the execution to the next middleware.
 #### 4. Map()
 - Is used to map the middleware to a specific URL.
+
+![3](https://user-images.githubusercontent.com/76180043/176383323-73f86f3c-fae3-4221-93d8-a90c1ca31a21.PNG)
+
+![1](https://user-images.githubusercontent.com/76180043/176383547-cec2aae5-29d5-4d7c-84f1-84d0c91de58b.PNG) 
+
+![2](https://user-images.githubusercontent.com/76180043/176383579-035a513e-2821-4b25-8926-d97f1b3577c5.PNG)
+
+### Custom Middleware
+- The custom middleware class must be inherited from "IMiddleware".

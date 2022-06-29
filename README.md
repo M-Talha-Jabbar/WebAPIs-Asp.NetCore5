@@ -63,3 +63,19 @@ Till here we have changed our Console app to Empty Web API Template we get by de
 
 ### Custom Middleware
 - The custom middleware class must be inherited from "IMiddleware".
+
+## Routing
+- Routing is the process of mapping the incoming http request (URL) to a particular resource (the action method).
+
+### Enable Routing in ASP.NET Core Apps
+- We can enable by inserting two middlewares in the HTTP Pipeline:
+
+#### 1. UseRouting()
+- Will only enable routing, will not map any URL to any resource.
+#### 2. UseEndpoint()
+ - By using this middleware we can map our resource.
+ 
+ ### Ways of Routing
+#### 1. Conventional Routing
+#### 2. Attribute Routing
+- Widely used.

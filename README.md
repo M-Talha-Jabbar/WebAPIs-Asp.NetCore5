@@ -79,3 +79,25 @@ Till here we have changed our Console app to Empty Web API Template we get by de
 #### 1. Conventional Routing
 #### 2. Attribute Routing
 - Widely used.
+
+## Best Practices for RESTful APIs
+
+![Capture](https://user-images.githubusercontent.com/76180043/176834132-609a5bd7-a58f-4ddb-99fd-164afbac5bc4.PNG)
+
+![2](https://user-images.githubusercontent.com/76180043/176834158-45b14c6e-ddf5-485e-a3e4-c7a5d7d1dd77.PNG)
+
+![3](https://user-images.githubusercontent.com/76180043/176834170-a7bb7a58-0a27-490f-a7d9-8319a7289b2b.PNG)
+
+![4](https://user-images.githubusercontent.com/76180043/176834185-c8e06db8-5bc0-4ff5-8feb-3f9a55786e2a.PNG)
+
+## Action Method Return Types
+
+### 1. Specific Type
+- Returns primitive and complex types.
+
+### 2. IActionResult
+- The IActionResult return type is appropriate when multiple ActionResult return types are possible in an action. The ActionResult types represent various HTTP status codes.
+- For example, if you want to return NotFound, OK, Redirect, etc. data from your action method then you need to use IActionResult as the return type from your action method.
+
+### 3. ActionResult&lt;T&gt; (ActionResult with Type)
+- It is the combination of ActionResult and Specific type.

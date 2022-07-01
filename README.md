@@ -101,3 +101,14 @@ Till here we have changed our Console app to Empty Web API Template we get by de
 
 ### 3. ActionResult&lt;T&gt; (ActionResult with Type)
 - It is the combination of ActionResult and Specific type.
+
+## Model Binding
+- The process of binding the HTTP Request data to the parameters of application Controllers and Properties is known as Model Binding. (Note: Exact same name required for mapping)
+
+![Capture](https://user-images.githubusercontent.com/76180043/176880724-811ac9c7-6251-4395-b079-f922045f698f.PNG)
+
+### Built-in Attributes for Model Binding
+
+#### 1. [BindProperty]
+- Used to bind the incoming form-data to the public properties.
+- BindProperty is applied on each target property individually.

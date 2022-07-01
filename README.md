@@ -107,8 +107,20 @@ Till here we have changed our Console app to Empty Web API Template we get by de
 
 ![Capture](https://user-images.githubusercontent.com/76180043/176880724-811ac9c7-6251-4395-b079-f922045f698f.PNG)
 
+### Default way of Data Binding
+- <b>By default the primitive types parameter in action method will get bind with URL data.</b>
+- <b>By default the complex type parameter in action method will get bind with the body of request.</b> <br />
+Reference: https://youtu.be/gPoO42sgCyc
+
 ### Built-in Attributes for Model Binding
 
-#### 1. [BindProperty]
+#### 1. [BindProperty] & [BindProperties]
 - Used to bind the incoming form-data to the public properties.
-- BindProperty is applied on each target property individually.
+- Works on both primitive types (int, string, etc) and complex data objects.
+- By default they does not work with HTTPGet Request. To enable this we have to set "SupportGets" property of these BindProperty and BindProperties Attributes to true.
+
+The only difference between these two is BindProperty is applied on each target property individually while BindProperties is applied on the Controller level.
+
+#### 2. [FromQuery]
+- Used to bind data available in query string.
+- It will force the Web API application to get/bind the data only from the query string of the url, ignoring all other places of data in HTTP request (i.e. Route parameter, body and headers).

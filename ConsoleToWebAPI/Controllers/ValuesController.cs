@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ConsoleToWebAPI.Controllers
 {
-    [Route("api/[controller]")] // Setting up the Base Route at the Controller level
+    [Route("api/[controller]")] // Setting up the Base Route (i.e. Base URL) at the Controller level
+    // After base url if you are using any further route on the action method then you need to append that URL into the base url.
+
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -14,12 +16,14 @@ namespace ConsoleToWebAPI.Controllers
         [Route("[action]/[controller]")]
         /* The Route Attribute support token replacement. It means we can enclose the token (i.e. controller and action) within a pair of square-braces ([ ]). The tokens 
         (i.e. [controller] and [action]) are then replaced with the values of controller and action method name where the route is defined. */
+
         public string GetAll()
         {
             return "hello from get all";
         }
 
         [Route("get-all-authors")]
+        [Route("~/getallauthors")] // If we donot want to use base route for a particular action method, then we need to override the base route.
         public string GetAllAuthors()
         {
             return "hello from get all authors";

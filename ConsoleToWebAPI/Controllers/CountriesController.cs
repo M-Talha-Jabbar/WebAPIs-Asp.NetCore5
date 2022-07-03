@@ -8,6 +8,8 @@ namespace ConsoleToWebAPI.Controllers
     [ApiController]
     public class CountriesController : ControllerBase
     {
+        // Built-in Attributes for Model Binding
+
         /*
         [BindProperty]
         public string Name { get; set; }
@@ -22,10 +24,41 @@ namespace ConsoleToWebAPI.Controllers
         public CountryModel Country { get; set; }
 
         [HttpPost("")]
-        public IActionResult AddCountry()
+        public IActionResult AddCountry() // [BindProperty] & [BindProperties]
         {
             // return Ok($"Name={this.Name}, Population={this.Population}, Area={this.Area}"); 
             return Ok($"Name={this.Country.Name}, Population={this.Country.Population}, Area={this.Country.Area}");
         }
+
+
+        [HttpPost("FromQuery")]
+        public IActionResult AddCountry([FromQuery]int id, [FromQuery]CountryModel model) // [FromQuery]
+        {
+            return Ok($"FromQuery Attribute: Id={id}, Name={model.Name}, Population={model.Population}, Area={model.Area}");
+        }
+
+
+        [HttpPost("FromRoute/{id}/{Name}/{Population}/{Area}")]
+        public IActionResult AddCountry([FromRoute]string id, [FromRoute]CountryModel model) // [FromRoute]
+        {
+            return Ok($"FromRoute Attribute: Id={id}, Name={model.Name}, Population={model.Population}, Area={model.Area}");
+        }
+
+
+        [HttpPut("FromBody/{id}")]
+        public IActionResult AddCountry([FromBody]CountryModel model, [FromRoute]string id) // [FromBody]
+        {
+            return Ok($"FromBody Attribute: Id={id}, Name={model.Name}, Population={model.Population}, Area={model.Area}");
+        }
+
+
+        [HttpPut("FromForm/{id}")]
+        public IActionResult AddCountry([FromForm] CountryModel model, [FromRoute]int id) // [FromForm]
+        {
+            return Ok($"FromForm Attribute: Id={id}, Name={model.Name}, Population={model.Population}, Area={model.Area}");
+        }
+
+
+        // URL/Endpoint should be unique for each action method irrespective of whether the action method is an overloaded method or not.
     }
 }

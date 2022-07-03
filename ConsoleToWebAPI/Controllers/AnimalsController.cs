@@ -10,6 +10,8 @@ namespace ConsoleToWebAPI.Controllers
     [ApiController]
     public class AnimalsController : ControllerBase
     {
+        // HTTP Status Codes
+
         private List<AnimalModel> animals = null;
         public AnimalsController() { 
             animals = new List<AnimalModel>()

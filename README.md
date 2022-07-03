@@ -109,18 +109,35 @@ Till here we have changed our Console app to Empty Web API Template we get by de
 
 ### Default way of Data Binding
 - <b>By default the primitive types parameter in action method will get bind with URL data.</b>
-- <b>By default the complex type parameter in action method will get bind with the body of request.</b> <br />
+- <b>By default the complex type parameter in action method will get bind with the body of request.</b> <br /><br />
 Reference: https://youtu.be/gPoO42sgCyc
 
 ### Built-in Attributes for Model Binding
+All built-in attributes <b>works on both primitive types (int, string, etc) and complex data objects.</b>
 
 #### 1. [BindProperty] & [BindProperties]
-- Used to bind the incoming form-data to the public properties.
-- Works on both primitive types (int, string, etc) and complex data objects.
+- Used to bind the incoming form-data to the public properties of the controller.
 - By default they does not work with HTTPGet Request. To enable this we have to set "SupportGets" property of these BindProperty and BindProperties Attributes to true.
 
 The only difference between these two is BindProperty is applied on each target property individually while BindProperties is applied on the Controller level.
 
 #### 2. [FromQuery]
-- Used to bind data available in query string.
-- It will force the Web API application to get/bind the data only from the query string of the url, ignoring all other places of data in HTTP request (i.e. Route parameter, body and headers).
+- Used to bind data available in query string to the parameters in action method.
+- The action method parameter with [FromQuery] attribute will get bind with the data in query string of the url only, ignoring all other places of data available in HTTP request (i.e. route parameter, body and headers).
+
+#### 3. [FromRoute]
+- Used to bind data available in route to the parameters in action method.
+- The action method parameter with [FromRoute] attribute will get bind with the data in the route(url) only, ignoring all other places of data available in HTTP request (i.e. query string, body and headers).
+
+#### 4. [FromBody]
+- Used to bind data (Content-Type: application/json) available in body of the request to the parameters in action method.
+- The action method parameter with [FromBody] attribute will get bind with the data in body of the request only, ignoring all other places of data available in HTTP request (i.e. route parameter, query string, body(form-data) and headers).
+
+#### 5. [FromForm]
+- Used to bind the form-data (Content-Type: application/x-www-form-urlencoded) available in body of the request to the parameters in action method ONLY.
+- The action method parameter with [FromForm] attribute will get bind with the form-data in body of the request only, ignoring all other places of data available in HTTP request (i.e. route parameter, query string, body(json-data) and headers).
+
+![Capture](https://user-images.githubusercontent.com/76180043/177051184-fe5f4373-43a8-4617-8b00-c9c610f19d3b.PNG)
+
+#### 6. [FromHeader]
+- 

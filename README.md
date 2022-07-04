@@ -156,7 +156,7 @@ Reference: https://youtu.be/pCzrw2CPA4g
 
 ### Working with Services using DI
 ![2](https://user-images.githubusercontent.com/76180043/177112132-68fbcd1e-93dd-46ea-8cc0-48db8888bf76.PNG)
-Here instead of using instances of the services (RepositoryA, ...) directly in the controller we will use the interfaces of the services. 
+Here instead of using instances of the services (RepositoryA, ...) directly in the controller we will use the interfaces of the services in the controller.
 
 - The main concept behind Dependency Injection (DI) is to implement IOC (Inversion of Control).
 - IOC means to have loosely coupling in the code.
@@ -165,9 +165,9 @@ Here instead of using instances of the services (RepositoryA, ...) directly in t
 Reference: https://youtu.be/ZEo6R8X4P4o
 
 ### Configuring DI
-- Asp.Net Core framework provides the built-in support for DI.
-- Dependency are registered in containers, and the container in asp.net core is IServiceCollection.
-- 
+- Asp.Net Core framework provides the built-in support for DI. 
+- Dependencies(services) are registered in containers, and the container in asp.net core is IServiceCollection and then we are free to use these services anywhere in the application.
+- The IServiceCollection is available as a parameter in Startup.ConfigureServices method.
 
 ### LifeTime of Services in DI
 #### 1. Singleton
@@ -182,4 +182,9 @@ Reference: https://youtu.be/ZEo6R8X4P4o
 - Transient services can be registered using AddTransient<> method.
 - A new instance of the service will be created every-time it is requested. For example, lets say CotrollerA is using a Transient service S 3 times in same HTTP request, then there will be 3 separate instances of this S service.
 
-#### 3. Transient
+### TryAddSingleton, TryAddScoped, TryAddTransient methods 
+Reference: https://youtu.be/PA9rrjWCl-U
+
+### Resolve Dependency(Service) directly in the Action Method rather than in Constructor Function (b/c we need that service only in that particular action method)
+- [FromServices] attribute will be used in the action method and the service will only be available for that particular action method.
+Reference: https://youtu.be/SJlkw2zvqYo

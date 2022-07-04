@@ -97,7 +97,7 @@ Till here we have changed our Console app to Empty Web API Template we get by de
 
 ### 2. IActionResult
 - The IActionResult return type is appropriate when multiple ActionResult return types are possible in an action. The ActionResult types represent various HTTP status codes.
-- For example, if you want to return NotFound, OK, Redirect, etc. data from your action method then you need to use IActionResult as the return type from your action method.
+- For example, if you want to return OK(200), Created(201), Accepted(202), BadRequest(400), NotFound(404), Redirect, etc. data from your action method then you need to use IActionResult as the return type from your action method.
 
 ### 3. ActionResult&lt;T&gt; (ActionResult with Type)
 - It is the combination of ActionResult and Specific type.
@@ -140,4 +140,8 @@ The only difference between these two is BindProperty is applied on each target 
 ![Capture](https://user-images.githubusercontent.com/76180043/177051184-fe5f4373-43a8-4617-8b00-c9c610f19d3b.PNG)
 
 #### 6. [FromHeader]
-- 
+- Used to bind the data available in headers to the parameters in action method.
+- The action method parameter with [FromHeader] attribute will get bind with the data in the headers only, ignoring all other places of data available in HTTP request (i.e. router paramater, query string, and body).
+
+### Custom Model Binder
+- The custom model binder class must be inherited from "IModelBinder".

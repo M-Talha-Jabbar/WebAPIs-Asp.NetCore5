@@ -145,3 +145,41 @@ The only difference between these two is BindProperty is applied on each target 
 
 ### Custom Model Binder
 - The custom model binder class must be inherited from "IModelBinder".
+
+## Dependency Injection (DI)
+![1](https://user-images.githubusercontent.com/76180043/177111497-2649006e-947e-4728-a4a6-67d30a01484f.PNG)
+
+### Working with Services without using DI
+![2](https://user-images.githubusercontent.com/76180043/177111544-f9d2f1ac-12e6-476e-bec1-6db639b1d29e.PNG)
+In this normal way, the HomeController is tightly couple with the EmailSender service. <br /><br />
+Reference: https://youtu.be/pCzrw2CPA4g
+
+### Working with Services using DI
+![2](https://user-images.githubusercontent.com/76180043/177112132-68fbcd1e-93dd-46ea-8cc0-48db8888bf76.PNG)
+Here instead of using instances of the services (RepositoryA, ...) directly in the controller we will use the interfaces of the services. 
+
+- The main concept behind Dependency Injection (DI) is to implement IOC (Inversion of Control).
+- IOC means to have loosely coupling in the code.
+- By creating instances using DI it is very easy to do Unit Testing.
+
+Reference: https://youtu.be/ZEo6R8X4P4o
+
+### Configuring DI
+- Asp.Net Core framework provides the built-in support for DI.
+- Dependency are registered in containers, and the container in asp.net core is IServiceCollection.
+- 
+
+### LifeTime of Services in DI
+#### 1. Singleton
+- Singleton services can be registered using AddSingleton<> method.
+- There will be only one instance of the Singleton service throughout the application.
+
+#### 2. Scoped
+- Scoped services can be registered using AddScoped<> method.
+- A new instance of the service will be created for new HTTP request.
+
+#### 3. Transient
+- Transient services can be registered using AddTransient<> method.
+- A new instance of the service will be created every-time it is requested. For example, lets say CotrollerA is using a Transient service S 3 times in same HTTP request, then there will be 3 separate instances of this S service.
+
+#### 3. Transient

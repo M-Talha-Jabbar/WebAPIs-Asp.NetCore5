@@ -53,9 +53,16 @@ namespace ConsoleToWebAPI.Controllers
 
 
         [HttpPut("FromForm/{id}")]
-        public IActionResult AddCountry([FromForm] CountryModel model, [FromRoute]int id) // [FromForm]
+        public IActionResult AddCountry([FromForm]CountryModel model, [FromRoute]int id) // [FromForm]
         {
             return Ok($"FromForm Attribute: Id={id}, Name={model.Name}, Population={model.Population}, Area={model.Area}");
+        }
+
+
+        [HttpPut("FromHeader/{id}")]
+        public IActionResult AddCountry([FromHeader]CountryModel model, [FromHeader] string developer, [FromRoute]int id)
+        {
+            return Ok($"FromHeader Attribute: Id={id}, Developer={developer}, Name={model.Name}, Population={model.Population}, Area={model.Area}");
         }
 
 

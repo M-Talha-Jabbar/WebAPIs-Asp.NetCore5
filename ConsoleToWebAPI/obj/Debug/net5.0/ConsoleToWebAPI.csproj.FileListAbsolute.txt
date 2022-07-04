@@ -39,3 +39,4 @@ C:\Users\Huzaifa\Desktop\ConsoleToWebAPI\ConsoleToWebAPI\obj\Debug\net5.0\Consol
 C:\Users\Huzaifa\Desktop\ConsoleToWebAPI\ConsoleToWebAPI\obj\Debug\net5.0\ref\ConsoleToWebAPI.dll
 C:\Users\Huzaifa\Desktop\ConsoleToWebAPI\ConsoleToWebAPI\obj\Debug\net5.0\ConsoleToWebAPI.pdb
 C:\Users\Huzaifa\Desktop\ConsoleToWebAPI\ConsoleToWebAPI\obj\Debug\net5.0\ConsoleToWebAPI.genruntimeconfig.cache
+D:\ConsoleToWebAPI\ConsoleToWebAPI\bin\Debug\net5.0\ConsoleToWebAPI.StaticWebAssets.xml

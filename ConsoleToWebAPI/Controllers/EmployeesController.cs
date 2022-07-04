@@ -1,4 +1,5 @@
 ﻿using ConsoleToWebAPI.Models;
+using ConsoleToWebAPI.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -49,5 +50,12 @@ namespace ConsoleToWebAPI.Controllers
 
             return new EmployeeModel() { Id = 2, Name = "Asad" };
         }
+
+        public string GetName([FromServices]IProductRepository _productRepository)
+        {
+            var name = _productRepository.GetName();
+            return name;
+        }
+        // Resolve Dependency(Service) directly in the Action Method rather than in Constructor Function (b/c we need the IProductRepository service only in this particular action method).
     }
 }

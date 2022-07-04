@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ConsoleToWebAPI.Repository;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using System;
 
@@ -14,6 +16,12 @@ namespace ConsoleToWebAPI
         {
             services.AddControllers(); // now this application has the support of controllers (injecting Web API service).
             services.AddTransient<CustomMiddleware>(); // injecting CustomMiddleware Service.
+
+            // registering a singleton service
+            services.TryAddSingleton<IProductRepository, ProductRepository>(); // (service type, implementation of the service to be used)
+
+            //services.AddSingleton<IProductRepository, TestRepository>(); // overriding the implementation of IProductRepository
+            services.TryAddSingleton<IProductRepository, TestRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) 

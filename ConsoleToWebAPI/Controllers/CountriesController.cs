@@ -67,5 +67,8 @@ namespace ConsoleToWebAPI.Controllers
 
 
         // URL/Endpoint should be unique for each action method irrespective of whether the action method is an overloaded method or not.
+
+        // An URL/Endpoint is a combination of HTTP Action + Route of the resource.
+        // So GET + /api/countries & POST + /api/countries both are unique URLs.
     }
 }

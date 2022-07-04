@@ -1,4 +1,4 @@
-# ConsoleToWebAPI
+# Console To Web API Application
 Building a Web API Project from Scratch (Console app to Web API app) - ASP.NET Core 5.0
 
 - Each .Net Core app is by default a console app.

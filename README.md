@@ -188,3 +188,24 @@ Reference: https://youtu.be/PA9rrjWCl-U
 ### Resolve Dependency(Service) directly in the Action Method rather than in Constructor Function (b/c we need that service only in that particular action method)
 - [FromServices] attribute will be used in the action method and the service will only be available for that particular action method.
 Reference: https://youtu.be/SJlkw2zvqYo
+
+## Entity Framework Core
+- Is an ORM and works on the object-oriented perspective. This means all the tables are converted into C# classes and the corresponding columns are converted as the properties of classes.
+
+### Working Approach
+- Code first
+- Database first
+
+### Install EF Core
+Reference: https://youtu.be/cNmh5IvaF4o
+
+### Setup the DbContext Class & Database Connection String
+Reference: https://youtu.be/DpW63L06SPw
+
+### Read Connection String from appsettings.json file
+Reference: https://youtu.be/Aw3IC63_UJw
+
+### Generate SQL Server database using Entity Framework Core migrations
+- <b>add-migration <name></b> (creating a new migration file after making some changes in code that is related to the database)
+- <b>update-database</b> (updating the database with the latest migration file)
+So whenever you will make some change in your code that is related to the database then you need to generate a new migration which will then update your database.

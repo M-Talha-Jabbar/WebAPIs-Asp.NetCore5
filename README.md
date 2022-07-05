@@ -209,3 +209,7 @@ Reference: https://youtu.be/Aw3IC63_UJw
 - <b>add-migration <name></b> (creating a new migration file after making some changes in code that is related to the database)
 - <b>update-database</b> (updating the database with the latest migration file)
 So whenever you will make some change in your code that is related to the database then you need to generate a new migration which will then update your database.
+
+## Important!
+
+![Capture](https://user-images.githubusercontent.com/76180043/177321152-c163051e-5dda-4a0a-a82a-1dcea0f9c825.PNG)

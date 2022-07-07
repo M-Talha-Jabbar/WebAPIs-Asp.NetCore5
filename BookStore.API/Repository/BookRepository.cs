@@ -1,5 +1,6 @@
 ﻿using BookStore.API.Data;
 using BookStore.API.Models;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,8 +40,103 @@ namespace BookStore.API.Repository
                 Title = x.Title,
                 Description = x.Description,
             }).FirstOrDefaultAsync();
+            // Difference between First() & FirstOrDefault() :
+            // If you couldn't find the book, then with First() it will give you an error.
+            // But for the same scenario FirstOrDefault() will return a null value and there will not be any error.
 
             return record;
+        }
+
+        public async Task<int> AddBookAsync(BookModel bookModel)
+        {
+            var book = new Books()
+            {
+                Title = bookModel.Title,
+                Description = bookModel.Description,
+            };
+
+            _context.Books.Add(book);
+            // At this point, the application will not hit the database. To hit the database we have to save all changes. For that we can use:
+            await _context.SaveChangesAsync(); // Here book 'Id' will be generated and will be automatically saved into 'book' object here.
+
+            return book.Id;
+        }
+
+        public async Task UpdateBookAsync(int bookId, BookModel bookModel)
+        {
+            /*
+            // For updating an item we are hitting database two times
+
+            // First One
+             var book = await _context.Books.FindAsync(bookId); // Find() only works with PK
+
+            if(book != null)
+            {
+                book.Title = bookModel.Title;
+                book.Description = bookModel.Description;
+
+                _context.Books.Update(book);
+
+                // Second One
+                await _context.SaveChangesAsync();
+            }
+
+            // This can cause performace issues.
+            */
+
+
+           // Now updating an item in single database call
+
+           var book = new Books()
+           {
+               Id = bookId,
+               Title = bookModel.Title,
+               Description = bookModel.Description
+           };
+
+            _context.Books.Update(book);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateBookPatchAsync(int bookId, JsonPatchDocument bookModel)
+        {
+            var book = await _context.Books.FindAsync(bookId);
+
+            if(book != null)
+            {
+                bookModel.ApplyTo(book);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteBookAsync(int bookId)
+        {
+            /*
+            // For deleting an item we are hitting database two times
+
+            // First One
+            var book = _context.Books.Where(x => x.Id == bookId).FirstOrDefault();
+
+            _context.Books.Remove(book);
+
+            // Second One
+            await _context.SaveChangesAsync();
+
+            // This can cause performace issues.
+            */
+
+
+            // Now deleting an item in single database call
+
+            var book = new Books()
+            {
+                Id = bookId,
+            };
+
+            _context.Books.Remove(book);
+            await _context.SaveChangesAsync();
+
+            // If we does not have PK then first approach where we are hitting database twice will be used.
         }
     }
 }

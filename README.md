@@ -217,3 +217,5 @@ So whenever you will make some change in your code that is related to the databa
 ## HTTP PATCH method in ASP.NET Core Web API
 - Use Microsoft.AspNetCore.JsonPatch Package in combination with HTTP PATCH method to partially updates data in a standard compliant way.
 Reference: https://jsonpatch.com/
+
+![Capture](https://user-images.githubusercontent.com/76180043/177804339-ab9b1ded-84f6-4832-9671-9c5000752b39.PNG)

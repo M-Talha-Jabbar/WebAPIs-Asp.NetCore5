@@ -190,16 +190,33 @@ Reference: https://youtu.be/PA9rrjWCl-U
 Reference: https://youtu.be/SJlkw2zvqYo
 
 ## Entity Framework Core
-- Is an ORM and works on the object-oriented perspective. This means all the tables are converted into C# classes and the corresponding columns are converted as the properties of classes.
+- Is an ORM framework and works on the object-oriented perspective. This means all the tables are converted into C# classes and the corresponding columns are converted as the properties of classes.
+- It is an enhancement to ADO.NET that gives developers an automated mechanism for accessing & storing the data in the database.
+![Capture](https://user-images.githubusercontent.com/76180043/180143674-b097c4dc-e904-4de8-a6ec-d8f0d2c8f387.PNG)
 
-### Working Approach
+### Working Approaches
 - Code first
-- Database first
+- Database first <br />
+Note: EF Core mainly targets the code-first approach and provides little support for the database-first approach.
+Reference: https://www.entityframeworktutorial.net/choosing-development-approach-with-entity-framework.aspx
+
+### How EF Works
+![Capture](https://user-images.githubusercontent.com/76180043/180206572-1ade5336-1d11-4911-bb35-aa5599c743c6.PNG)
+
+### Entity in EF
+- An entity in Entity Framework is a class that maps to a database table. This class must be included as a DbSet<TEntity> type property in the DbContext class.
+- An Entity can include two types of properties: Scalar Property & Navigation Property
+- Navigation Property has further two more types: Reference Navigation & Collection Navigation <br />
+Reference: https://www.entityframeworktutorial.net/basics/entity-in-entityframework.aspx
+
+### Persistence in EF
+Reference: https://www.entityframeworktutorial.net/EntityFramework4.3/persistence-in-entity-framework.aspx
 
 ### Install EF Core
 Reference: https://youtu.be/cNmh5IvaF4o
 
 ### Setup the DbContext Class & Database Connection String
+- The context class is used to query or save data to the database. It is also used to configure domain classes, database related mappings, change tracking settings, caching, transaction etc.
 Reference: https://youtu.be/DpW63L06SPw
 
 ### Read Connection String from appsettings.json file
@@ -215,7 +232,7 @@ So whenever you will make some change in your code that is related to the databa
 ![Capture](https://user-images.githubusercontent.com/76180043/177321152-c163051e-5dda-4a0a-a82a-1dcea0f9c825.PNG)
 
 ## HTTP PATCH method in ASP.NET Core Web API
-- Use Microsoft.AspNetCore.JsonPatch Package in combination with HTTP PATCH method to partially updates data in a standard compliant way.
+- Use Microsoft.AspNetCore.JsonPatch Package in combination with HTTP PATCH method to partially updates data in a standard compliant way. <br />
 Reference: https://jsonpatch.com/
 
 ![Capture](https://user-images.githubusercontent.com/76180043/177804339-ab9b1ded-84f6-4832-9671-9c5000752b39.PNG)

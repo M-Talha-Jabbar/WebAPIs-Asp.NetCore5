@@ -217,6 +217,15 @@ Reference: https://youtu.be/cNmh5IvaF4o
 
 ### Setup the DbContext Class & Database Connection String
 - The context class is used to query or save data to the database. It is also used to configure domain classes, database related mappings, change tracking settings, caching, transaction etc.
+- DbContext is a combination of the Unit Of Work and Repository patterns.
+- DbContext in EF Core allows us to perform following tasks:
+  1. Manage Database Connection
+  2. Configure model & relationship
+  3. Querying database
+  4. Saving data to database
+  5. Configure change tracking
+  6. Caching
+  7. Transaction Management
 Reference: https://youtu.be/DpW63L06SPw
 
 ### Read Connection String from appsettings.json file
@@ -225,7 +234,7 @@ Reference: https://youtu.be/Aw3IC63_UJw
 ### Generate SQL Server database using Entity Framework Core migrations
 - <b>add-migration <name></b> (creating a new migration file after making some changes in code that is related to the database)
 - <b>update-database</b> (updating the database with the latest migration file)
-So whenever you will make some change in your code that is related to the database then you need to generate a new migration which will then update your database.
+Now, whenever we add or update domain(entity) classes or configurations, we need to sync the database with the model using add-migration and update-database commands.
 
 ## Important!
 

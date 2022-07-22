@@ -190,16 +190,57 @@ Reference: https://youtu.be/PA9rrjWCl-U
 Reference: https://youtu.be/SJlkw2zvqYo
 
 ## Entity Framework Core
-- Is an ORM and works on the object-oriented perspective. This means all the tables are converted into C# classes and the corresponding columns are converted as the properties of classes.
+- Is an ORM framework and works on the object-oriented perspective. This means all the tables are converted into C# classes and the corresponding columns are converted as the properties of classes.
+- It is an enhancement to ADO.NET that gives developers an automated mechanism for accessing & storing the data in the database.
+![Capture](https://user-images.githubusercontent.com/76180043/180143674-b097c4dc-e904-4de8-a6ec-d8f0d2c8f387.PNG)
 
-### Working Approach
+### Working Approaches
 - Code first
-- Database first
+- Database first <br />
+Note: EF Core mainly targets the code-first approach and provides little support for the database-first approach.
+Reference: https://www.entityframeworktutorial.net/choosing-development-approach-with-entity-framework.aspx
+
+### How EF Works
+![Capture](https://user-images.githubusercontent.com/76180043/180206572-1ade5336-1d11-4911-bb35-aa5599c743c6.PNG)
+
+### Entity in EF
+- An entity in Entity Framework is a class that maps to a database table. This class must be included as a DbSet<TEntity> type property in the DbContext class.
+- An Entity can include two types of properties: 
+  1. Scalar Property
+  2. Navigation Property
+- Navigation Property has further two more types: 
+  1. Reference Navigation 
+  2. Collection Navigation <br />
+Reference: https://www.entityframeworktutorial.net/basics/entity-in-entityframework.aspx
+
+### Persistence in EF
+Reference: https://www.entityframeworktutorial.net/EntityFramework4.3/persistence-in-entity-framework.aspx
+
+### Default Conventions in EF
+Reference: https://www.entityframeworktutorial.net/efcore/conventions-in-ef-core.aspx <br />
+Note: If entities do not follow the default relationships conventions, then you can use Fluent API to configure the relationships between entities.
+  
+### Configurations in EF
+- There are two ways to configure domain(entity) classes if we want to customize the entity to table mapping and do not want to follow default conventions:
+  1. By using Data Annotation Attributes <br />
+      Data Annotations attributes are .NET attributes which can be applied on an entity class or properties to override default conventions.
+  2. By using Fluent API <br />
+Note: Data annotations only give you a subset of configuration options. Fluent API provides a full set of configuration options available in Code-First.
 
 ### Install EF Core
 Reference: https://youtu.be/cNmh5IvaF4o
 
 ### Setup the DbContext Class & Database Connection String
+- The context class is used to query or save data to the database. It is also used to configure domain classes, database related mappings, change tracking settings, caching, transaction etc.
+- DbContext is a combination of the Unit Of Work and Repository patterns.
+- DbContext in EF Core allows us to perform following tasks:
+  1. Manage Database Connection
+  2. Configure model & relationship
+  3. Querying database
+  4. Saving data to database
+  5. Configure change tracking
+  6. Caching
+  7. Transaction Management <br />
 Reference: https://youtu.be/DpW63L06SPw
 
 ### Read Connection String from appsettings.json file
@@ -208,12 +249,14 @@ Reference: https://youtu.be/Aw3IC63_UJw
 ### Generate SQL Server database using Entity Framework Core migrations
 - <b>add-migration <name></b> (creating a new migration file after making some changes in code that is related to the database)
 - <b>update-database</b> (updating the database with the latest migration file)
-So whenever you will make some change in your code that is related to the database then you need to generate a new migration which will then update your database.
+Now, whenever we add or update domain(entity) classes or configurations, we need to sync the database with the model using add-migration and update-database commands.
 
 ## Important!
 
 ![Capture](https://user-images.githubusercontent.com/76180043/177321152-c163051e-5dda-4a0a-a82a-1dcea0f9c825.PNG)
 
 ## HTTP PATCH method in ASP.NET Core Web API
-- Use Microsoft.AspNetCore.JsonPatch Package in combination with HTTP PATCH method to partially updates data in a standard compliant way.
+- Use Microsoft.AspNetCore.JsonPatch Package in combination with HTTP PATCH method to partially updates data in a standard compliant way. <br />
 Reference: https://jsonpatch.com/
+
+![Capture](https://user-images.githubusercontent.com/76180043/177804339-ab9b1ded-84f6-4832-9671-9c5000752b39.PNG)

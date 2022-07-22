@@ -205,12 +205,20 @@ Reference: https://www.entityframeworktutorial.net/choosing-development-approach
 
 ### Entity in EF
 - An entity in Entity Framework is a class that maps to a database table. This class must be included as a DbSet<TEntity> type property in the DbContext class.
-- An Entity can include two types of properties: Scalar Property & Navigation Property
-- Navigation Property has further two more types: Reference Navigation & Collection Navigation <br />
+- An Entity can include two types of properties: 
+  1. Scalar Property
+  2. Navigation Property
+- Navigation Property has further two more types: 
+  1. Reference Navigation 
+  2. Collection Navigation <br />
 Reference: https://www.entityframeworktutorial.net/basics/entity-in-entityframework.aspx
 
 ### Persistence in EF
 Reference: https://www.entityframeworktutorial.net/EntityFramework4.3/persistence-in-entity-framework.aspx
+
+### Default Conventions in EF
+Reference: https://www.entityframeworktutorial.net/efcore/conventions-in-ef-core.aspx
+Note: If entities do not follow the default relationships conventions, then you can use Fluent API to configure the relationships between entities.
 
 ### Install EF Core
 Reference: https://youtu.be/cNmh5IvaF4o
@@ -225,7 +233,7 @@ Reference: https://youtu.be/cNmh5IvaF4o
   4. Saving data to database
   5. Configure change tracking
   6. Caching
-  7. Transaction Management
+  7. Transaction Management <br />
 Reference: https://youtu.be/DpW63L06SPw
 
 ### Read Connection String from appsettings.json file

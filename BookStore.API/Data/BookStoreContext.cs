@@ -10,5 +10,6 @@ namespace BookStore.API.Data
         }
 
         public DbSet<Books> Books { get; set; } // will create a table in a database with name 'Books'
+        public DbSet<Author> authors { get; set; }
     }
 }

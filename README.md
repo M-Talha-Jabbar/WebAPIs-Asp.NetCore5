@@ -190,7 +190,7 @@ Reference: https://youtu.be/PA9rrjWCl-U
 Reference: https://youtu.be/SJlkw2zvqYo
 
 ## Entity Framework Core
-- Is an ORM framework and works on the object-oriented perspective. This means all the tables are converted into C# classes and the corresponding columns are converted as the properties of classes.
+- Is an ORM(Object-Relational Mapper) framework and works on the object-oriented perspective. This means all the tables are converted into C# classes and the corresponding columns are converted as the properties of classes.
 - It is an enhancement to ADO.NET that gives developers an automated mechanism for accessing & storing the data in the database.
 ![Capture](https://user-images.githubusercontent.com/76180043/180143674-b097c4dc-e904-4de8-a6ec-d8f0d2c8f387.PNG)
 
@@ -260,3 +260,9 @@ Now, whenever we add or update domain(entity) classes or configurations, we need
 Reference: https://jsonpatch.com/
 
 ![Capture](https://user-images.githubusercontent.com/76180043/177804339-ab9b1ded-84f6-4832-9671-9c5000752b39.PNG)
+
+## 3-Tier Architecture
+
+![WhatsApp Image 2022-07-23 at 1 24 41 PM](https://user-images.githubusercontent.com/76180043/180597114-8743f31a-878d-43f1-aab9-b0f7c9823578.jpeg)
+
+These layers are implemented as separate projects.

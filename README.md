@@ -261,6 +261,13 @@ Reference: https://jsonpatch.com/
 
 ![Capture](https://user-images.githubusercontent.com/76180043/177804339-ab9b1ded-84f6-4832-9671-9c5000752b39.PNG)
 
+## Identity Core
+- Identity Core has everything that is required to work with the authentication and authorization including:
+  1. Signup, Login, Change Password, Forgot Password
+  2. Multi factor authentication
+  3. Login with third party app like Google, Facebook, Microsoft, etc
+- Along with these features the Identity Core works with Entity Framework Core. It will provide you all the tables that are required to work with authentication and authorization.
+
 ## 3-Tier Architecture
 
 ![Capture](https://user-images.githubusercontent.com/76180043/180648197-c84129f2-acdb-4d8f-adb1-64417115a13e.PNG)

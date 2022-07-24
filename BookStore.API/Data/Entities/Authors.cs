@@ -1,6 +1,6 @@
 ﻿namespace BookStore.API.Data
 {
-    public class Author
+    public class Authors
     {
         public int Id { get; set; }
         public string Name { get; set; }

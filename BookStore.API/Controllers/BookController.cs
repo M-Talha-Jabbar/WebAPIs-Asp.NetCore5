@@ -8,11 +8,11 @@ namespace BookStore.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BooksController : ControllerBase
+    public class BookController : ControllerBase
     {
         private readonly IBookRepository bookRepository;
 
-        public BooksController(IBookRepository bookRepository)
+        public BookController(IBookRepository bookRepository)
         {
             this.bookRepository = bookRepository;
         }

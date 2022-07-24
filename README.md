@@ -247,7 +247,7 @@ Reference: https://youtu.be/DpW63L06SPw
 Reference: https://youtu.be/Aw3IC63_UJw
 
 ### Generate SQL Server database using Entity Framework Core migrations
-- <b>add-migration <name></b> (creating a new migration file after making some changes in code that is related to the database)
+- <b>add-migration &lt;name&gt;</b> (creating a new migration file after making some changes in code that is related to the database)
 - <b>update-database</b> (updating the database with the latest migration file)
 Now, whenever we add or update domain(entity) classes or configurations, we need to sync the database with the model using add-migration and update-database commands.
 
@@ -263,6 +263,6 @@ Reference: https://jsonpatch.com/
 
 ## 3-Tier Architecture
 
-![WhatsApp Image 2022-07-23 at 1 24 41 PM](https://user-images.githubusercontent.com/76180043/180597114-8743f31a-878d-43f1-aab9-b0f7c9823578.jpeg)
+![Capture](https://user-images.githubusercontent.com/76180043/180648197-c84129f2-acdb-4d8f-adb1-64417115a13e.PNG)
 
 These layers are implemented as separate projects.

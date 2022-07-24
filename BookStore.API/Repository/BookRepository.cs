@@ -1,4 +1,5 @@
-﻿using BookStore.API.Data;
+﻿using AutoMapper;
+using BookStore.API.Data;
 using BookStore.API.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
@@ -11,9 +12,11 @@ namespace BookStore.API.Repository
     public class BookRepository : IBookRepository
     {
         private readonly BookStoreContext _context;
-        public BookRepository(BookStoreContext context)
+        private readonly IMapper _mapper;
+        public BookRepository(BookStoreContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
         public async Task<List<BookModel>> GetAllBooksAsync() // do async programming whenever you have to interact with the database.
         {
@@ -22,6 +25,7 @@ namespace BookStore.API.Repository
             // So now we have to convert this data in 'records' from List<Books> to List<BookModel>.
             // First approach is using foreach loop.
             // Second approach is fetching data directly into the BookModel and that is what we are going to do.
+            /*
             var records = await _context.Books.Select(x => new BookModel()
             {
                 Id = x.Id,
@@ -30,10 +34,16 @@ namespace BookStore.API.Repository
             }).ToListAsync();
 
             return records;
+            */
+
+            // Using AutoMapper
+            var records = await _context.Books.ToListAsync();
+            return _mapper.Map<List<BookModel>>(records);
         }
 
         public async Task<BookModel> GetBookByIdAsync(int bookId)
         {
+            /*
             var record = await _context.Books.Where(x => x.Id == bookId).Select(x => new BookModel()
             {
                 Id = x.Id,
@@ -45,6 +55,13 @@ namespace BookStore.API.Repository
             // But for the same scenario FirstOrDefault() will return a null value and there will not be any error.
 
             return record;
+            */
+
+            // Using Automapper
+            var book = await _context.Books.FindAsync(bookId);
+            return _mapper.Map<BookModel>(book);
+
+            // If names are different to each other then you need to define those mappings in Profile (ApplicationMapper.cs)
         }
 
         public async Task<int> AddBookAsync(BookModel bookModel)

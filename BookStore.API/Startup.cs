@@ -19,9 +19,9 @@ namespace BookStore.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration) // we are getting the configuration via Dependency Injection.
         {
-            Configuration = configuration;
+            Configuration = configuration; // the configuration is basically the configurations we have in appsettings.json file.
         }
 
         public IConfiguration Configuration { get; }
@@ -38,6 +38,7 @@ namespace BookStore.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookStore.API", Version = "v1" });
             });
             services.AddTransient<IBookRepository, BookRepository>();
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

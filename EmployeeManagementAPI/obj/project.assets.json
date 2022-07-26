@@ -5978,19 +5978,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Huzaifa\\.nuget\\packages\\": {}
+    "C:\\Users\\talha.jabbar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Huzaifa\\Desktop\\ConsoleToWebAPI\\EmployeeManagementAPI\\EmployeeManagementAPI.csproj",
+      "projectUniqueName": "D:\\ConsoleToWebAPI\\EmployeeManagementAPI\\EmployeeManagementAPI.csproj",
       "projectName": "EmployeeManagementAPI",
-      "projectPath": "C:\\Users\\Huzaifa\\Desktop\\ConsoleToWebAPI\\EmployeeManagementAPI\\EmployeeManagementAPI.csproj",
-      "packagesPath": "C:\\Users\\Huzaifa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Huzaifa\\Desktop\\ConsoleToWebAPI\\EmployeeManagementAPI\\obj\\",
+      "projectPath": "D:\\ConsoleToWebAPI\\EmployeeManagementAPI\\EmployeeManagementAPI.csproj",
+      "packagesPath": "C:\\Users\\talha.jabbar\\.nuget\\packages\\",
+      "outputPath": "D:\\ConsoleToWebAPI\\EmployeeManagementAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Huzaifa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\talha.jabbar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6049,7 +6049,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

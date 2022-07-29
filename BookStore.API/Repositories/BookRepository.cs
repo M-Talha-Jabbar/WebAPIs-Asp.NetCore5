@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BookStore.API.Data;
 using BookStore.API.Models;
+using BookStore.API.ViewModels;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace BookStore.API.Repository
             _context = context;
             _mapper = mapper;
         }
-        public async Task<List<BookModel>> GetAllBooksAsync() // do async programming whenever you have to interact with the database.
+        public async Task<List<BookViewModel>> GetAllBooksAsync() // do async programming whenever you have to interact with the database.
         {
             //var records = _context.Books.ToList(); // Since we are using async programming so:
             //var records = _context.Books.ToListAsync(); // As of now 'records' contains List<Books> but we have to return List<BookModel>.
@@ -26,7 +27,7 @@ namespace BookStore.API.Repository
             // First approach is using foreach loop.
             // Second approach is fetching data directly into the BookModel and that is what we are going to do.
             /*
-            var records = await _context.Books.Select(x => new BookModel()
+            var records = await _context.Books.Select(x => new BookViewModel()
             {
                 Id = x.Id,
                 Title = x.Title,
@@ -38,13 +39,13 @@ namespace BookStore.API.Repository
 
             // Using AutoMapper
             var records = await _context.Books.ToListAsync();
-            return _mapper.Map<List<BookModel>>(records);
+            return _mapper.Map<List<BookViewModel>>(records);
         }
 
-        public async Task<BookModel> GetBookByIdAsync(int bookId)
+        public async Task<BookViewModel> GetBookByIdAsync(int bookId)
         {
             /*
-            var record = await _context.Books.Where(x => x.Id == bookId).Select(x => new BookModel()
+            var record = await _context.Books.Where(x => x.Id == bookId).Select(x => new BookViewModel()
             {
                 Id = x.Id,
                 Title = x.Title,
@@ -59,14 +60,14 @@ namespace BookStore.API.Repository
 
             // Using Automapper
             var book = await _context.Books.FindAsync(bookId);
-            return _mapper.Map<BookModel>(book);
+            return _mapper.Map<BookViewModel>(book);
 
             // If names are different to each other then you need to define those mappings in Profile (ApplicationMapper.cs)
         }
 
-        public async Task<int> AddBookAsync(BookModel bookModel)
+        public async Task<int> AddBookAsync(BookViewModel bookModel)
         {
-            var book = new Books()
+            var book = new Book()
             {
                 Title = bookModel.Title,
                 Description = bookModel.Description,
@@ -79,7 +80,7 @@ namespace BookStore.API.Repository
             return book.Id;
         }
 
-        public async Task UpdateBookAsync(int bookId, BookModel bookModel)
+        public async Task UpdateBookAsync(int bookId, BookViewModel bookModel)
         {
             /*
             // For updating an item we are hitting database two times
@@ -104,7 +105,7 @@ namespace BookStore.API.Repository
 
            // Now updating an item in single database call
 
-           var book = new Books()
+           var book = new Book()
            {
                Id = bookId,
                Title = bookModel.Title,
@@ -145,7 +146,7 @@ namespace BookStore.API.Repository
 
             // Now deleting an item in single database call
 
-            var book = new Books()
+            var book = new Book()
             {
                 Id = bookId,
             };
@@ -154,6 +155,18 @@ namespace BookStore.API.Repository
             await _context.SaveChangesAsync();
 
             // If we does not have PK then first approach where we are hitting database twice will be used.
+        }
+
+        public async Task<List<DuplicateBookViewModel>> GetAllDuplicateBooksByIdAsync(int bookId)
+        {
+            var books = await _context.BookDuplicates.Where(bkdup => bkdup.BookId == bookId).Select(x => new DuplicateBookViewModel()
+            {
+                Id = x.Id,
+                CopyNumber = x.CopyNumber,
+                BookId = x.BookId
+            }).ToListAsync();
+
+            return books;
         }
     }
 }

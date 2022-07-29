@@ -26,7 +26,7 @@ namespace BookStore.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAllBooks([FromRoute]int id)
+        public async Task<IActionResult> GetBookById([FromRoute]int id)
         { 
             var book = await this.bookRepository.GetBookByIdAsync(id);
 
@@ -39,15 +39,15 @@ namespace BookStore.API.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> AddNewBook([FromBody]BookModel bookModel)
+        public async Task<IActionResult> AddNewBook([FromBody]BookViewModel bookModel)
         {
             var id = await bookRepository.AddBookAsync(bookModel);
 
-            return CreatedAtAction("GetAllBooks", new { id = id }, new { id }); // (action name, route values, response data)
+            return CreatedAtAction("GetBookById", new { id = id }, new { id }); // (action name, route values, response data)
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBook([FromRoute]int id, [FromBody]BookModel bookModel)
+        public async Task<IActionResult> UpdateBook([FromRoute]int id, [FromBody]BookViewModel bookModel)
         {
             await bookRepository.UpdateBookAsync(id, bookModel);
 
@@ -68,6 +68,14 @@ namespace BookStore.API.Controllers
             await bookRepository.DeleteBookAsync(id);
 
             return Ok();
+        }
+
+        [HttpGet("{id}/DuplicateBooks")]
+        public async Task<IActionResult> GetAllDuplicateBooksById([FromRoute]int id)
+        {
+            var books = await bookRepository.GetAllDuplicateBooksByIdAsync(id);
+
+            return Ok(books);
         }
     }
 }

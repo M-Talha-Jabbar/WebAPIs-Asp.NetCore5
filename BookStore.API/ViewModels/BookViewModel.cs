@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations; // Data Annotations is used for model validataions.
+﻿using BookStore.API.Data.Models;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations; // Data Annotations is used for model validataions.
 
 namespace BookStore.API.Models
 {
-    public class BookModel
+    public class BookViewModel
     {
         public int Id { get; set; }
 

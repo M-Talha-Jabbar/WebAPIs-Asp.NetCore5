@@ -1,4 +1,5 @@
-﻿using BookStore.API.Models;
+﻿using BookStore.API.Data.Models;
+using BookStore.API.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,10 +16,12 @@ namespace BookStore.API.Data
     {
         public BookStoreContext(DbContextOptions<BookStoreContext> options) : base(options) // passing the settings to the base class constructor
         {
-            
+
         }
 
-        public DbSet<Books> Books { get; set; } // will create a table in a database with name 'Books'
-        public DbSet<Authors> Authors { get; set; }
+        public DbSet<Book> Books { get; set; } // will create a table in a database with name 'Books'
+        public DbSet<BookDuplicate> BookDuplicates { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<AuthorAddress> AuthorsAddress { get; set; }
     }
 }

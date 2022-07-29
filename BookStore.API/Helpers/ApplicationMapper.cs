@@ -17,7 +17,7 @@ namespace BookStore.API.Helpers
 
             // OR 
 
-            CreateMap<Books, BookModel>().ReverseMap();
+            CreateMap<Book, BookViewModel>().ReverseMap();
         }
     }
 }

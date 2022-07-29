@@ -1,5 +1,7 @@
+using BookStore.API.Contracts;
 using BookStore.API.Data;
 using BookStore.API.Models;
+using BookStore.API.Repositories;
 using BookStore.API.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,8 +44,11 @@ namespace BookStore.API
                 .AddDefaultTokenProviders();
 
             services.AddControllers().AddNewtonsoftJson();
-            services.AddTransient<IBookRepository, BookRepository>();
-            services.AddTransient<IAccountRepository, AccountRepository>();
+
+            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IAuthorRepository, AuthorRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
+
             services.AddAutoMapper(typeof(Startup));
 
             services.AddSwaggerGen(c =>

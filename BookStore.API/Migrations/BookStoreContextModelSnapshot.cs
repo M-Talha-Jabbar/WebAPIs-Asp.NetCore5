@@ -26,7 +26,7 @@ namespace BookStore.API.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BooksId")
+                    b.Property<int>("AuthorAddressId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -34,12 +34,13 @@ namespace BookStore.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BooksId");
+                    b.HasIndex("AuthorAddressId")
+                        .IsUnique();
 
-                    b.ToTable("authors");
+                    b.ToTable("Authors");
                 });
 
-            modelBuilder.Entity("BookStore.API.Data.Books", b =>
+            modelBuilder.Entity("BookStore.API.Data.Book", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -55,6 +56,41 @@ namespace BookStore.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("BookStore.API.Data.Models.AuthorAddress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AuthorsAddress");
+                });
+
+            modelBuilder.Entity("BookStore.API.Data.Models.BookDuplicate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CopyNumber")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("BookDuplicates");
                 });
 
             modelBuilder.Entity("BookStore.API.Models.UserModel", b =>
@@ -261,11 +297,24 @@ namespace BookStore.API.Migrations
 
             modelBuilder.Entity("BookStore.API.Data.Author", b =>
                 {
-                    b.HasOne("BookStore.API.Data.Books", "Books")
-                        .WithMany()
-                        .HasForeignKey("BooksId");
+                    b.HasOne("BookStore.API.Data.Models.AuthorAddress", "AuthorAddress")
+                        .WithOne("Author")
+                        .HasForeignKey("BookStore.API.Data.Author", "AuthorAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Books");
+                    b.Navigation("AuthorAddress");
+                });
+
+            modelBuilder.Entity("BookStore.API.Data.Models.BookDuplicate", b =>
+                {
+                    b.HasOne("BookStore.API.Data.Book", "Book")
+                        .WithMany("BookDuplicate")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -317,6 +366,16 @@ namespace BookStore.API.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BookStore.API.Data.Book", b =>
+                {
+                    b.Navigation("BookDuplicate");
+                });
+
+            modelBuilder.Entity("BookStore.API.Data.Models.AuthorAddress", b =>
+                {
+                    b.Navigation("Author");
                 });
 #pragma warning restore 612, 618
         }

@@ -255,7 +255,9 @@ Note: Fluent API configurations have higher precedence than data annotation attr
 ### Querying in EF Core
 - Entity framework supports three types of queries:
 #### 1. LINQ-to-Entities
-- 
+- LINQ-to-Entities queries operate on the entity set (DbSet type properties) to access the data from the underlying database.
+- The DbSet class is derived from **IQuerayable** so thats why we can use LINQ for querying against DbSet.
+- You can either use the LINQ **method syntax** or **query syntax** when querying with EDM.
 ![Capture](https://user-images.githubusercontent.com/76180043/182031161-fd6f19cc-7f4b-425f-a2b7-3958361f4c56.PNG)
 
 #### 2. Entity SQL

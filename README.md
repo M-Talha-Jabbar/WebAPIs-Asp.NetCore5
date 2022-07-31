@@ -194,39 +194,6 @@ Reference: https://youtu.be/SJlkw2zvqYo
 - It is an enhancement to ADO.NET that gives developers an automated mechanism for accessing & storing the data in the database.
 ![Capture](https://user-images.githubusercontent.com/76180043/180143674-b097c4dc-e904-4de8-a6ec-d8f0d2c8f387.PNG)
 
-### Working Approaches
-- Code first
-- Database first <br />
-Note: EF Core mainly targets the code-first approach and provides little support for the database-first approach.
-Reference: https://www.entityframeworktutorial.net/choosing-development-approach-with-entity-framework.aspx
-
-### How EF Works
-![Capture](https://user-images.githubusercontent.com/76180043/180206572-1ade5336-1d11-4911-bb35-aa5599c743c6.PNG)
-
-### Entity in EF
-- An entity in Entity Framework is a class that maps to a database table. This class must be included as a DbSet<TEntity> type property in the DbContext class.
-- An Entity can include two types of properties: 
-  1. Scalar Property
-  2. Navigation Property
-- Navigation Property has further two more types: 
-  1. Reference Navigation 
-  2. Collection Navigation <br />
-Reference: https://www.entityframeworktutorial.net/basics/entity-in-entityframework.aspx
-
-### Persistence in EF
-Reference: https://www.entityframeworktutorial.net/EntityFramework4.3/persistence-in-entity-framework.aspx
-
-### Default Conventions in EF
-Reference: https://www.entityframeworktutorial.net/efcore/conventions-in-ef-core.aspx <br />
-  
-### Configurations in EF
-- There are two ways to configure domain(entity) classes if we want to customize the entity to table mapping and do not want to follow default conventions:
-  1. By using Data Annotation Attributes <br />
-      Data Annotations attributes are .NET attributes which can be applied on an entity class or properties to override default conventions.
-  2. By using Fluent API <br />
-Note: Data annotations only give you a subset of configuration options. Fluent API provides a full set of configuration options available in Code-First.
-Note: Fluent API configurations have higher precedence than data annotation attributes.
-
 ### Install EF Core
 Reference: https://youtu.be/cNmh5IvaF4o
 
@@ -246,11 +213,54 @@ Reference: https://youtu.be/DpW63L06SPw
 ### Read Connection String from appsettings.json file
 Reference: https://youtu.be/Aw3IC63_UJw
 
-### Generate SQL Server database using Entity Framework Core migrations
+### Generate SQL Server database using Entity Framework Core migrations (i.e. Code-first Approach)
 - <b>add-migration &lt;name&gt;</b> (creating a new migration file after making some changes in code that is related to the database)
 - <b>update-database</b> (updating the database with the latest migration file)
 Now, whenever we add or update domain(entity) classes or configurations, we need to sync the database with the model using add-migration and update-database commands.
 
+### Working Approaches
+#### 1. Code first
+#### 2. Database first <br />
+Note: EF Core mainly targets the code-first approach and provides little support for the database-first approach.
+Reference: https://www.entityframeworktutorial.net/choosing-development-approach-with-entity-framework.aspx
+
+### How EF Works
+![Capture](https://user-images.githubusercontent.com/76180043/180206572-1ade5336-1d11-4911-bb35-aa5599c743c6.PNG)
+
+### Entity in EF
+- An entity in Entity Framework is a class that maps to a database table. This class must be included as a DbSet<TEntity> type property in the DbContext class.
+- An Entity can include two types of properties: 
+#### 1. Scalar Property
+#### 2. Navigation Property
+- Navigation Property has further two more types: 
+#### 1. Reference Navigation 
+#### 2. Collection Navigation <br />
+Reference: https://www.entityframeworktutorial.net/basics/entity-in-entityframework.aspx
+
+### Persistence in EF
+Reference: https://www.entityframeworktutorial.net/EntityFramework4.3/persistence-in-entity-framework.aspx
+
+### Default Conventions in EF
+Reference: https://www.entityframeworktutorial.net/efcore/conventions-in-ef-core.aspx <br />
+  
+### Configurations in EF
+- There are two ways to configure domain(entity) classes if we want to customize the entity to table mapping and do not want to follow default conventions:
+#### 1. By using Data Annotation Attributes <br />
+- Data Annotations attributes are .NET attributes which can be applied on an entity class or properties to override default conventions.
+#### 2. By using Fluent API <br />
+ 
+Note: Data annotations only give you a subset of configuration options. Fluent API provides a full set of configuration options available in Code-First. <br />
+Note: Fluent API configurations have higher precedence than data annotation attributes.
+  
+### Querying in EF Core
+- Entity framework supports three types of queries:
+#### 1. LINQ-to-Entities
+- 
+![Capture](https://user-images.githubusercontent.com/76180043/182031161-fd6f19cc-7f4b-425f-a2b7-3958361f4c56.PNG)
+
+#### 2. Entity SQL
+#### 3. Native SQL
+  
 ## Important!
 
 ![Capture](https://user-images.githubusercontent.com/76180043/177321152-c163051e-5dda-4a0a-a82a-1dcea0f9c825.PNG)

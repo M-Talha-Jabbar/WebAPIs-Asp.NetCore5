@@ -12,5 +12,9 @@ namespace BookStore.API.Data
 
         // for 1:N relationship between Book : BookDuplicate
         public List<BookDuplicate> BookDuplicate { get; set; }
+
+
+        // for N:N relationship between Book : Author
+        public List<Author> Authors { get; set; } // This 'Book' Model is independent from 'Book' ViewModel so creating another relationship in it will not affect my API response.
     }
 }

@@ -24,5 +24,21 @@ namespace BookStore.API.Controllers
 
             return Ok(author);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddAuthor([FromBody]AuthorViewModel authorViewModel)
+        {
+            var authorId = await _authorRepository.AddAuthorAsync(authorViewModel);
+
+            return CreatedAtAction("GetAuthorById", new { id = authorId }, new { authorId });
+        }
+
+        [HttpGet("{id}/books")]
+        public async Task<IActionResult> GetAuthorBooks([FromRoute]int id)
+        {
+            var authorBooks = await _authorRepository.GetAuthorBooksAsync(id);
+
+            return Ok(authorBooks);
+        }
     }
 }

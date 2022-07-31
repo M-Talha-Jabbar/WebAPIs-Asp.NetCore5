@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations; // Data Annotations is used for mod
 
 namespace BookStore.API.Models
 {
+    // BookViewModel & DuplicateBookViewModel are used in BookController.
     public class BookViewModel
     {
         public int Id { get; set; }

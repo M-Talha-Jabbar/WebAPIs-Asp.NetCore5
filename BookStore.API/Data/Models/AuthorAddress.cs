@@ -4,8 +4,7 @@ namespace BookStore.API.Data.Models
 {
     public class AuthorAddress
     {
-        [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } // this will be autoincremented by default. 
         public string Location { get; set; }
 
 

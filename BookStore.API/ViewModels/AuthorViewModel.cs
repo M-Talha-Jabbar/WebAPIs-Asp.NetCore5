@@ -2,6 +2,7 @@
 
 namespace BookStore.API.ViewModels
 {
+    // AuthorViewModel & AuthorBooksViewModel are used in AuthorController.
     public class AuthorViewModel
     {
         public int Id { get; set; } 

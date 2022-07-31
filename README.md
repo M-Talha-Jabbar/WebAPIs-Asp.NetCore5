@@ -221,7 +221,7 @@ Now, whenever we add or update domain(entity) classes or configurations, we need
 ### Working Approaches
 #### 1. Code first
 #### 2. Database first <br />
-Note: EF Core mainly targets the code-first approach and provides little support for the database-first approach.
+Note: EF Core mainly targets the code-first approach and provides little support for the database-first approach. <br />
 Reference: https://www.entityframeworktutorial.net/choosing-development-approach-with-entity-framework.aspx
 
 ### How EF Works

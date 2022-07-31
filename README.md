@@ -218,7 +218,6 @@ Reference: https://www.entityframeworktutorial.net/EntityFramework4.3/persistenc
 
 ### Default Conventions in EF
 Reference: https://www.entityframeworktutorial.net/efcore/conventions-in-ef-core.aspx <br />
-Note: If entities do not follow the default relationships conventions, then you can use Fluent API to configure the relationships between entities.
   
 ### Configurations in EF
 - There are two ways to configure domain(entity) classes if we want to customize the entity to table mapping and do not want to follow default conventions:
@@ -226,6 +225,7 @@ Note: If entities do not follow the default relationships conventions, then you 
       Data Annotations attributes are .NET attributes which can be applied on an entity class or properties to override default conventions.
   2. By using Fluent API <br />
 Note: Data annotations only give you a subset of configuration options. Fluent API provides a full set of configuration options available in Code-First.
+Note: Fluent API configurations have higher precedence than data annotation attributes.
 
 ### Install EF Core
 Reference: https://youtu.be/cNmh5IvaF4o

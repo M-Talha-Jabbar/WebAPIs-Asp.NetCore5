@@ -13,7 +13,8 @@ Reference: https://youtu.be/UGCItQXSeD0
 References: 
   https://youtu.be/7WKV9Sqf_VE
   https://youtu.be/Uk8NxQmAbd8
-  
+  ![Capture](https://user-images.githubusercontent.com/76180043/182314281-bc1de726-84f5-4c34-b3e7-a1e8bd0b7e7b.PNG)
+
 ### 3. Setup the Startup Class (Configure and ConfigureServices Methods)
 Reference: https://youtu.be/lfsrZ_3BcnM
 
@@ -251,7 +252,26 @@ Reference: https://www.entityframeworktutorial.net/efcore/conventions-in-ef-core
  
 Note: Data annotations only give you a subset of configuration options. Fluent API provides a full set of configuration options available in Code-First. <br />
 Note: Fluent API configurations have higher precedence than data annotation attributes.
-  
+
+### LINQ
+- LINQ provides us with common query syntax which allows us to query the data from various data sources.
+![Capture](https://user-images.githubusercontent.com/76180043/182314522-4b4324cb-25b9-46e7-a4e3-76d34700947e.PNG)
+
+- LINQ queries return results as objects. It enables you to uses object-oriented approach on the result set and not to worry about transforming different formats of results into objects.
+
+- Each query is a combination of three things. They are as follows:
+  1. Initialization (to work with a particular data source)
+  2. Condition (where, filter, sorting condition)
+  3. Selection (single selection, group selection, or joining)
+
+#### Different Ways to Write LINQ Query
+##### 1. Linq Query Syntax
+##### 2. Linq Method Syntax
+##### 3. Mixed Syntax (Query + Method)
+
+![Capture](https://user-images.githubusercontent.com/76180043/182300225-639af0f6-6761-4c67-8121-38d9b308c6bd.PNG)
+- You will not get the result of a LINQ query until you execute it. LINQ query can be execute in multiple ways, here we used foreach loop to execute our query stored in myLinqQuery. The foreach loop executes the query on the data source (i.e. string array 'names') and get the result and then iterates over the result set.
+ 
 ### Querying in EF Core
 - Entity framework supports three types of queries:
 #### 1. LINQ-to-Entities

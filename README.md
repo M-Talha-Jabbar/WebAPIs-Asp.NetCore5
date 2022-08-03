@@ -296,3 +296,24 @@ Note: Fluent API configurations have higher precedence than data annotation attr
 ![Capture](https://user-images.githubusercontent.com/76180043/180648197-c84129f2-acdb-4d8f-adb1-64417115a13e.PNG)
 
 These layers are implemented as separate projects.
+
+
+# C#
+
+## Exception Handling
+
+- There are two methods to handle the exception:
+### 1. Logical Implementation
+### 2. Try Catch Implementation
+- You can write any number of catch blocks for a given try block in C# and each will handle different types of exceptions thrown by the try block.
+![Capture](https://user-images.githubusercontent.com/76180043/182626646-86ca8d36-532f-40c4-b31e-75e8a47a51a6.PNG)
+
+Note: In real-time programming, the first and foremost importance is always given to logical implementation only. If it is not possible to handle an exception using logical implementation then we need to try-catch implementation.
+
+- If we will use the super Exception class (i.e. used to handle all types of exceptions) when there is any relevant class available for that exception, it will kill the execution performance of the program.
+
+- It is always recommended to write a catch block with super Exception class as the last catch block even though we are writing multiple catch blocks for specific exceptions. It acts as a backup catch block.
+
+- The keyword finally establishes a block that definitely executes statements placed in it irrespective of whether the exception has occurred or not, irrespective of whether the exception is handled or not in the catch block. 
+
+- Within the "finally" block we need to write the resource releasing logic or clean up the code such as un-referencing objects or closing connections.

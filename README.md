@@ -13,7 +13,6 @@ Reference: https://youtu.be/UGCItQXSeD0
 References: 
   https://youtu.be/7WKV9Sqf_VE
   https://youtu.be/Uk8NxQmAbd8
-  ![Capture](https://user-images.githubusercontent.com/76180043/182314281-bc1de726-84f5-4c34-b3e7-a1e8bd0b7e7b.PNG)
 
 ### 3. Setup the Startup Class (Configure and ConfigureServices Methods)
 Reference: https://youtu.be/lfsrZ_3BcnM

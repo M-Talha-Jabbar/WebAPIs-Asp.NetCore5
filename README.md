@@ -116,7 +116,7 @@ All built-in attributes <b>works on both primitive types (int, string, etc) and 
 
 #### 1. [BindProperty] & [BindProperties]
 - Used to bind the incoming form-data to the public properties of the controller.
-- By default they does not work with HTTPGet Request. To enable this we have to set "SupportGets" property of these BindProperty and BindProperties Attributes to true.
+- By default they does not work with HTTPGet Request. To enable this we have to set "SupportGets" property of these BindProperty and BindProperties Attributes to true. 
 
 The only difference between these two is BindProperty is applied on each target property individually while BindProperties is applied on the Controller level.
 
@@ -150,7 +150,7 @@ The only difference between these two is BindProperty is applied on each target 
 
 ### Working with Services without using DI
 ![2](https://user-images.githubusercontent.com/76180043/177111544-f9d2f1ac-12e6-476e-bec1-6db639b1d29e.PNG)
-In this normal way, the HomeController is tightly couple with the EmailSender service. <br /><br />
+In this normal way, the HomeController is tightly couple with the EmailSender service.
 
 ### Working with Services using DI
 ![2](https://user-images.githubusercontent.com/76180043/177112132-68fbcd1e-93dd-46ea-8cc0-48db8888bf76.PNG)
@@ -182,18 +182,28 @@ Here instead of using instances of the services (RepositoryA, ...) directly in t
 Reference: https://youtu.be/PA9rrjWCl-U
 
 ### Resolve Dependency(Service) directly in the Action Method rather than in Constructor Function (b/c we need that service only in that particular action method)
-- [FromServices] attribute will be used in the action method and the service will only be available for that particular action method.
+- **[FromServices]** attribute will be used in the action method and the service will only be available for that particular action method.
 Reference: https://youtu.be/SJlkw2zvqYo
 
-## Entity Framework Core
+## Important!
+![Capture](https://user-images.githubusercontent.com/76180043/177321152-c163051e-5dda-4a0a-a82a-1dcea0f9c825.PNG)
+
+## HTTP PATCH method in ASP.NET Core Web API
+- Use Microsoft.AspNetCore.JsonPatch Package in combination with HTTP PATCH method to partially updates data in a standard compliant way. <br />
+Reference: https://jsonpatch.com/
+![Capture](https://user-images.githubusercontent.com/76180043/177804339-ab9b1ded-84f6-4832-9671-9c5000752b39.PNG)
+
+
+# Entity Framework Core
 - Is an ORM(Object-Relational Mapper) framework and works on the object-oriented perspective. This means all the tables are converted into C# classes and the corresponding columns are converted as the properties of classes.
 - It is an enhancement to ADO.NET that gives developers an automated mechanism for accessing & storing the data in the database.
+
 ![Capture](https://user-images.githubusercontent.com/76180043/180143674-b097c4dc-e904-4de8-a6ec-d8f0d2c8f387.PNG)
 
-### Install EF Core
+## Install EF Core
 Reference: https://youtu.be/cNmh5IvaF4o
 
-### Setup the DbContext Class & Database Connection String
+## Setup the DbContext Class & Database Connection String
 - The context class is used to query or save data to the database. It is also used to configure domain classes, database related mappings, change tracking settings, caching, transaction etc.
 - DbContext is a combination of the Unit Of Work and Repository patterns.
 - DbContext in EF Core allows us to perform following tasks:
@@ -206,7 +216,7 @@ Reference: https://youtu.be/cNmh5IvaF4o
   7. Transaction Management <br />
 Reference: https://youtu.be/DpW63L06SPw
 
-### Read Connection String from appsettings.json file
+## Read Connection String from appsettings.json file
 Reference: https://youtu.be/Aw3IC63_UJw
 
 ### Generate SQL Server database using Entity Framework Core migrations (i.e. Code-first Approach)
@@ -214,34 +224,33 @@ Reference: https://youtu.be/Aw3IC63_UJw
 - <b>update-database</b> (updating the database with the latest migration file)
 Now, whenever we add or update domain(entity) classes or configurations, we need to sync the database with the model using add-migration and update-database commands.
 
-### Working Approaches
-#### 1. Code first
-#### 2. Database first <br />
+## Working Approaches
+### 1. Code first
+### 2. Database first <br />
 Note: EF Core mainly targets the code-first approach and provides little support for the database-first approach. <br />
-Reference: https://www.entityframeworktutorial.net/choosing-development-approach-with-entity-framework.aspx
 
-### How EF Works
+## How EF Works
 ![Capture](https://user-images.githubusercontent.com/76180043/180206572-1ade5336-1d11-4911-bb35-aa5599c743c6.PNG)
 
-### Entity in EF
+## Entity in EF
 - An entity in Entity Framework is a class that maps to a database table. This class must be included as a DbSet<TEntity> type property in the DbContext class.
 - An Entity can include two types of properties: 
-#### 1. Scalar Property
-#### 2. Navigation Property
+### 1. Scalar Property
+### 2. Navigation Property
 - Navigation Property has further two more types: 
-#### 1. Reference Navigation 
-#### 2. Collection Navigation <br />
+### 1. Reference Navigation 
+### 2. Collection Navigation <br />
   
-### Configurations in EF
+## Configurations in EF
 - There are two ways to configure domain(entity) classes if we want to customize the entity to table mapping and do not want to follow default conventions:
-#### 1. By using Data Annotation Attributes <br />
+### 1. By using Data Annotation Attributes <br />
 - Data Annotations attributes are .NET attributes which can be applied on an entity class or properties to override default conventions.
-#### 2. By using Fluent API <br />
+### 2. By using Fluent API <br />
  
 Note: Data annotations only give you a subset of configuration options. Fluent API provides a full set of configuration options available in Code-First. <br />
 Note: Fluent API configurations have higher precedence than data annotation attributes.
 
-### LINQ
+## LINQ
 - LINQ provides us with common query syntax which allows us to query the data from various data sources.
 ![Capture](https://user-images.githubusercontent.com/76180043/182314522-4b4324cb-25b9-46e7-a4e3-76d34700947e.PNG)
 
@@ -255,41 +264,33 @@ Note: Fluent API configurations have higher precedence than data annotation attr
   2. Condition (where, filter, sorting condition)
   3. Selection (single selection, group selection, or joining)
 
-#### Different Ways to Write LINQ Query
-##### 1. Linq Query Syntax
-##### 2. Linq Method Syntax
-##### 3. Mixed Syntax (Query + Method)
+### Different Ways to Write LINQ Query
+#### 1. Linq Query Syntax
+#### 2. Linq Method Syntax
+#### 3. Mixed Syntax (Query + Method)
 
 ![Capture](https://user-images.githubusercontent.com/76180043/182300225-639af0f6-6761-4c67-8121-38d9b308c6bd.PNG)
 - You will not get the result of a LINQ query until you execute it. LINQ query can be execute in multiple ways, here we used foreach loop to execute our query stored in myLinqQuery. The foreach loop executes the query on the data source (i.e. string array 'names') and get the result and then iterates over the result set.
  
-### Querying in EF Core
+## Querying in EF Core
 - Entity framework supports three types of queries:
-#### 1. LINQ-to-Entities
+### 1. LINQ-to-Entities
 - LINQ-to-Entities queries operate on the entity set (DbSet type properties) to access the data from the underlying database.
 - The DbSet class is derived from **IQuerayable** so thats why we can use LINQ for querying against DbSet.
 
-#### 2. Entity SQL
-#### 3. Native SQL
+### 2. Entity SQL
+### 3. Native SQL
   
-## Important!
-
-![Capture](https://user-images.githubusercontent.com/76180043/177321152-c163051e-5dda-4a0a-a82a-1dcea0f9c825.PNG)
-
-## HTTP PATCH method in ASP.NET Core Web API
-- Use Microsoft.AspNetCore.JsonPatch Package in combination with HTTP PATCH method to partially updates data in a standard compliant way. <br />
-Reference: https://jsonpatch.com/
-
-![Capture](https://user-images.githubusercontent.com/76180043/177804339-ab9b1ded-84f6-4832-9671-9c5000752b39.PNG)
-
-## Identity Core
+  
+# Identity Core
 - Identity Core has everything that is required to work with the authentication and authorization including:
   1. Signup, Login, Change Password, Forgot Password
   2. Multi factor authentication
   3. Login with third party app like Google, Facebook, Microsoft, etc
 - Along with these features the Identity Core works with Entity Framework Core. It will provide you all the tables that are required to work with authentication and authorization.
 
-## 3-Tier Architecture
+  
+# 3-Tier Architecture
 
 ![Capture](https://user-images.githubusercontent.com/76180043/180648197-c84129f2-acdb-4d8f-adb1-64417115a13e.PNG)
 

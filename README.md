@@ -261,9 +261,9 @@ Note: Fluent API configurations have higher precedence than data annotation attr
   2. Condition (where, filter, sorting condition)
   3. Selection (single selection, group selection, or joining)
   
-- We can write LINQ queries for the classes that implement IEnumerable&lt;T&gt; or IQuerable&lt;T&gt; interfaces.
+- We can write LINQ queries for the classes that implement **IEnumerable&lt;T&gt;** or **IQuerable&lt;T&gt;** interface only.
   
-### Difference between IEnumerable<T> & IQuerable<T>
+### Difference between IEnumerable&lt;T&gt; & IQuerable&lt;T&gt;
 ![Capture](https://user-images.githubusercontent.com/76180043/182535156-c8b35667-cbcf-440d-b46c-29a5917026d5.PNG)
 
 ### Different Ways to Write LINQ Query

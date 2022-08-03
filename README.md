@@ -111,7 +111,6 @@ Till here we have changed our Console app to Empty Web API Template we get by de
 ### Default way of Data Binding
 - <b>By default the primitive types parameter in action method will get bind with URL data.</b>
 - <b>By default the complex type parameter in action method will get bind with the body of request.</b> <br /><br />
-Reference: https://youtu.be/gPoO42sgCyc
 
 ### Built-in Attributes for Model Binding
 All built-in attributes <b>works on both primitive types (int, string, etc) and complex data objects.</b>
@@ -153,7 +152,6 @@ The only difference between these two is BindProperty is applied on each target 
 ### Working with Services without using DI
 ![2](https://user-images.githubusercontent.com/76180043/177111544-f9d2f1ac-12e6-476e-bec1-6db639b1d29e.PNG)
 In this normal way, the HomeController is tightly couple with the EmailSender service. <br /><br />
-Reference: https://youtu.be/pCzrw2CPA4g
 
 ### Working with Services using DI
 ![2](https://user-images.githubusercontent.com/76180043/177112132-68fbcd1e-93dd-46ea-8cc0-48db8888bf76.PNG)
@@ -162,8 +160,6 @@ Here instead of using instances of the services (RepositoryA, ...) directly in t
 - The main concept behind Dependency Injection (DI) is to implement IOC (Inversion of Control).
 - IOC means to have loosely coupling in the code.
 - By creating instances using DI it is very easy to do Unit Testing.
-
-Reference: https://youtu.be/ZEo6R8X4P4o
 
 ### Configuring DI
 - Asp.Net Core framework provides the built-in support for DI. 
@@ -236,13 +232,6 @@ Reference: https://www.entityframeworktutorial.net/choosing-development-approach
 - Navigation Property has further two more types: 
 #### 1. Reference Navigation 
 #### 2. Collection Navigation <br />
-Reference: https://www.entityframeworktutorial.net/basics/entity-in-entityframework.aspx
-
-### Persistence in EF
-Reference: https://www.entityframeworktutorial.net/EntityFramework4.3/persistence-in-entity-framework.aspx
-
-### Default Conventions in EF
-Reference: https://www.entityframeworktutorial.net/efcore/conventions-in-ef-core.aspx <br />
   
 ### Configurations in EF
 - There are two ways to configure domain(entity) classes if we want to customize the entity to table mapping and do not want to follow default conventions:
@@ -258,6 +247,9 @@ Note: Fluent API configurations have higher precedence than data annotation attr
 ![Capture](https://user-images.githubusercontent.com/76180043/182314522-4b4324cb-25b9-46e7-a4e3-76d34700947e.PNG)
 
 - LINQ queries return results as objects. It enables you to uses object-oriented approach on the result set and not to worry about transforming different formats of results into objects.
+  
+- We can write LINQ queries for the classes that implement IEnumerable/IEnumerable<T> or IQueryable/IQuerable<T> interface.
+![Capture](https://user-images.githubusercontent.com/76180043/182535156-c8b35667-cbcf-440d-b46c-29a5917026d5.PNG)
 
 - Each query is a combination of three things. They are as follows:
   1. Initialization (to work with a particular data source)

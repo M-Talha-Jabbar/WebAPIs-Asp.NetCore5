@@ -256,13 +256,15 @@ Note: Fluent API configurations have higher precedence than data annotation attr
 
 - LINQ queries return results as objects. It enables you to uses object-oriented approach on the result set and not to worry about transforming different formats of results into objects.
   
-- We can write LINQ queries for the classes that implement IEnumerable/IEnumerable<T> or IQueryable/IQuerable<T> interface.
-![Capture](https://user-images.githubusercontent.com/76180043/182535156-c8b35667-cbcf-440d-b46c-29a5917026d5.PNG)
-
 - Each query is a combination of three things. They are as follows:
   1. Initialization (to work with a particular data source)
   2. Condition (where, filter, sorting condition)
   3. Selection (single selection, group selection, or joining)
+  
+- We can write LINQ queries for the classes that implement IEnumerable&lt;T&gt; or IQuerable&lt;T&gt; interfaces.
+  
+### Difference between IEnumerable<T> & IQuerable<T>
+![Capture](https://user-images.githubusercontent.com/76180043/182535156-c8b35667-cbcf-440d-b46c-29a5917026d5.PNG)
 
 ### Different Ways to Write LINQ Query
 #### 1. Linq Query Syntax

@@ -269,7 +269,6 @@ Note: Fluent API configurations have higher precedence than data annotation attr
 ### Different Ways to Write LINQ Query
 #### 1. Linq Query Syntax
 #### 2. Linq Method Syntax
-#### 3. Mixed Syntax (Query + Method)
 
 ![Capture](https://user-images.githubusercontent.com/76180043/182300225-639af0f6-6761-4c67-8121-38d9b308c6bd.PNG)
 - You will not get the result of a LINQ query until you execute it. LINQ query can be execute in multiple ways, here we used foreach loop to execute our query stored in myLinqQuery. The foreach loop executes the query on the data source (i.e. string array 'names') and get the result and then iterates over the result set.

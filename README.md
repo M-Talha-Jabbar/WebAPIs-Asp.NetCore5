@@ -225,8 +225,8 @@ Reference: https://youtu.be/Aw3IC63_UJw
 Now, whenever we add or update domain(entity) classes or configurations, we need to sync the database with the model using add-migration and update-database commands.
 
 ## Working Approaches
-### 1. Code first
-### 2. Database first <br />
+  1. Code first
+  2. Database first <br />
 Note: EF Core mainly targets the code-first approach and provides little support for the database-first approach. <br />
 
 ## How EF Works
@@ -235,17 +235,17 @@ Note: EF Core mainly targets the code-first approach and provides little support
 ## Entity in EF
 - An entity in Entity Framework is a class that maps to a database table. This class must be included as a DbSet<TEntity> type property in the DbContext class.
 - An Entity can include two types of properties: 
-### 1. Scalar Property
-### 2. Navigation Property
+  1. Scalar Property
+  2. Navigation Property
 - Navigation Property has further two more types: 
-### 1. Reference Navigation 
-### 2. Collection Navigation <br />
+  1. Reference Navigation 
+  2. Collection Navigation <br />
   
 ## Configurations in EF
 - There are two ways to configure domain(entity) classes if we want to customize the entity to table mapping and do not want to follow default conventions:
-### 1. By using Data Annotation Attributes <br />
+  1. By using Data Annotation Attributes <br />
 - Data Annotations attributes are .NET attributes which can be applied on an entity class or properties to override default conventions.
-### 2. By using Fluent API <br />
+  2. By using Fluent API <br />
  
 Note: Data annotations only give you a subset of configuration options. Fluent API provides a full set of configuration options available in Code-First. <br />
 Note: Fluent API configurations have higher precedence than data annotation attributes.
@@ -267,23 +267,23 @@ Note: Fluent API configurations have higher precedence than data annotation attr
 ![Capture](https://user-images.githubusercontent.com/76180043/182535156-c8b35667-cbcf-440d-b46c-29a5917026d5.PNG)
 
 ### Different Ways to Write LINQ Query
-#### 1. Linq Query Syntax
-#### 2. Linq Method Syntax
+  1. Linq Query Syntax
+  2. Linq Method Syntax
 
 ![Capture](https://user-images.githubusercontent.com/76180043/182300225-639af0f6-6761-4c67-8121-38d9b308c6bd.PNG)
 - You will not get the result of a LINQ query until you execute it. LINQ query can be execute in multiple ways, here we used foreach loop to execute our query stored in myLinqQuery. The foreach loop executes the query on the data source (i.e. string array 'names') and get the result and then iterates over the result set.
  
 ## Querying in EF Core
 - Entity framework supports three types of queries:
-### 1. LINQ-to-Entities
+  1. LINQ-to-Entities
 - LINQ-to-Entities queries operate on the entity set (DbSet type properties) to access the data from the underlying database.
 - The DbSet class is derived from **IQuerayable** so thats why we can use LINQ for querying against DbSet.
 
-### 2. Entity SQL
-### 3. Native SQL
+  2. Entity SQL
+  3. Native SQL
   
   
-# Identity Core
+# Identity
 - Identity Core has everything that is required to work with the authentication and authorization including:
   1. Signup, Login, Change Password, Forgot Password
   2. Multi factor authentication
@@ -303,8 +303,8 @@ These layers are implemented as separate projects.
 ## Exception Handling
 
 - There are two methods to handle the exception:
-### 1. Logical Implementation
-### 2. Try Catch Implementation
+  1. Logical Implementation
+  2. Try Catch Implementation
 - You can write any number of catch blocks for a given try block in C# and each will handle different types of exceptions thrown by the try block.
 ![Capture](https://user-images.githubusercontent.com/76180043/182626646-86ca8d36-532f-40c4-b31e-75e8a47a51a6.PNG)
 
@@ -319,5 +319,5 @@ Note: In real-time programming, the first and foremost importance is always give
 - Within the "finally" block we need to write the resource releasing logic or clean up the code such as un-referencing objects or closing connections.
 
 - The exceptions are divided into two types such as:
-### 1. System Exception
-### 2. Application Exception (i.e. User-defined Exception)
+  1. System Exception
+  2. Application Exception (i.e. User-defined Exception)

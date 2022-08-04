@@ -317,3 +317,7 @@ Note: In real-time programming, the first and foremost importance is always give
 - The keyword finally establishes a block that definitely executes statements placed in it irrespective of whether the exception has occurred or not, irrespective of whether the exception is handled or not in the catch block. 
 
 - Within the "finally" block we need to write the resource releasing logic or clean up the code such as un-referencing objects or closing connections.
+
+- The exceptions are divided into two types such as:
+### 1. System Exception
+### 2. Application Exception (i.e. User-defined Exception)

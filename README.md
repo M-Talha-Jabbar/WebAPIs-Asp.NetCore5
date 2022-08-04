@@ -244,8 +244,8 @@ Note: EF Core mainly targets the code-first approach and provides little support
 ## Configurations in EF
 - There are two ways to configure domain(entity) classes if we want to customize the entity to table mapping and do not want to follow default conventions:
   1. By using Data Annotation Attributes <br />
-- Data Annotations attributes are .NET attributes which can be applied on an entity class or properties to override default conventions.
-  2. By using Fluent API <br />
+      - Data Annotations attributes are .NET attributes which can be applied on an entity class or properties to override default conventions.
+  2. By using Fluent API 
  
 Note: Data annotations only give you a subset of configuration options. Fluent API provides a full set of configuration options available in Code-First. <br />
 Note: Fluent API configurations have higher precedence than data annotation attributes.
@@ -276,9 +276,8 @@ Note: Fluent API configurations have higher precedence than data annotation attr
 ## Querying in EF Core
 - Entity framework supports three types of queries:
   1. LINQ-to-Entities
-- LINQ-to-Entities queries operate on the entity set (DbSet type properties) to access the data from the underlying database.
-- The DbSet class is derived from **IQuerayable** so thats why we can use LINQ for querying against DbSet.
-
+      - LINQ-to-Entities queries operate on the entity set (DbSet type properties) to access the data from the underlying database.
+      - The DbSet class is derived from **IQuerable&lt;T&gt;** so thats why we can use LINQ for querying against DbSet.
   2. Entity SQL
   3. Native SQL
   
@@ -288,6 +287,7 @@ Note: Fluent API configurations have higher precedence than data annotation attr
   1. Signup, Login, Change Password, Forgot Password
   2. Multi factor authentication
   3. Login with third party app like Google, Facebook, Microsoft, etc
+  
 - Along with these features the Identity Core works with Entity Framework Core. It will provide you all the tables that are required to work with authentication and authorization.
 
   
@@ -305,6 +305,7 @@ These layers are implemented as separate projects.
 - There are two methods to handle the exception:
   1. Logical Implementation
   2. Try Catch Implementation
+  
 - You can write any number of catch blocks for a given try block in C# and each will handle different types of exceptions thrown by the try block.
 ![Capture](https://user-images.githubusercontent.com/76180043/182626646-86ca8d36-532f-40c4-b31e-75e8a47a51a6.PNG)
 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Huzaifa\\Desktop\\ConsoleToWebAPI\\BookStore.API\\BookStore.API.csproj": {}
+    "D:\\ConsoleToWebAPI\\BookStore.API\\BookStore.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Huzaifa\\Desktop\\ConsoleToWebAPI\\BookStore.API\\BookStore.API.csproj": {
+    "D:\\ConsoleToWebAPI\\BookStore.API\\BookStore.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Huzaifa\\Desktop\\ConsoleToWebAPI\\BookStore.API\\BookStore.API.csproj",
+        "projectUniqueName": "D:\\ConsoleToWebAPI\\BookStore.API\\BookStore.API.csproj",
         "projectName": "BookStore.API",
-        "projectPath": "C:\\Users\\Huzaifa\\Desktop\\ConsoleToWebAPI\\BookStore.API\\BookStore.API.csproj",
-        "packagesPath": "C:\\Users\\Huzaifa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Huzaifa\\Desktop\\ConsoleToWebAPI\\BookStore.API\\obj\\",
+        "projectPath": "D:\\ConsoleToWebAPI\\BookStore.API\\BookStore.API.csproj",
+        "packagesPath": "C:\\Users\\talha.jabbar\\.nuget\\packages\\",
+        "outputPath": "D:\\ConsoleToWebAPI\\BookStore.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Huzaifa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\talha.jabbar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -95,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.410\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

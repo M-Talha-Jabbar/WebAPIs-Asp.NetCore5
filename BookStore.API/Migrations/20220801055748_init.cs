@@ -221,6 +221,30 @@ namespace BookStore.API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "AuthorBooks",
+                columns: table => new
+                {
+                    AuthorsId = table.Column<int>(type: "int", nullable: false),
+                    BooksId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AuthorBooks", x => new { x.AuthorsId, x.BooksId });
+                    table.ForeignKey(
+                        name: "FK_AuthorBooks_Authors_AuthorsId",
+                        column: x => x.AuthorsId,
+                        principalTable: "Authors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AuthorBooks_Books_BooksId",
+                        column: x => x.BooksId,
+                        principalTable: "Books",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -261,6 +285,11 @@ namespace BookStore.API.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AuthorBooks_BooksId",
+                table: "AuthorBooks",
+                column: "BooksId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Authors_AuthorAddressId",
                 table: "Authors",
                 column: "AuthorAddressId",
@@ -290,7 +319,7 @@ namespace BookStore.API.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Authors");
+                name: "AuthorBooks");
 
             migrationBuilder.DropTable(
                 name: "BookDuplicates");
@@ -302,10 +331,13 @@ namespace BookStore.API.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "AuthorsAddress");
+                name: "Authors");
 
             migrationBuilder.DropTable(
                 name: "Books");
+
+            migrationBuilder.DropTable(
+                name: "AuthorsAddress");
         }
     }
 }

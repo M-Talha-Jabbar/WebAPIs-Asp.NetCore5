@@ -119,3 +119,4 @@ C:\Users\Huzaifa\Desktop\ConsoleToWebAPI\EmployeeManagementAPI\obj\Debug\net5.0\
 C:\Users\Huzaifa\Desktop\ConsoleToWebAPI\EmployeeManagementAPI\obj\Debug\net5.0\ref\EmployeeManagementAPI.dll
 C:\Users\Huzaifa\Desktop\ConsoleToWebAPI\EmployeeManagementAPI\obj\Debug\net5.0\EmployeeManagementAPI.pdb
 C:\Users\Huzaifa\Desktop\ConsoleToWebAPI\EmployeeManagementAPI\obj\Debug\net5.0\EmployeeManagementAPI.genruntimeconfig.cache
+D:\ConsoleToWebAPI\EmployeeManagementAPI\bin\Debug\net5.0\EmployeeManagementAPI.StaticWebAssets.xml

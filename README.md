@@ -283,10 +283,7 @@ Note: Fluent API configurations have higher precedence than data annotation attr
   
   
 # Identity
-- Identity Core has everything that is required to work with the authentication and authorization including:
-  1. Signup, Login, Change Password, Forgot Password
-  2. Multi factor authentication
-  3. Login with third party app like Google, Facebook, Microsoft, etc
+-  It's a membership system. It allows us to create, read, update and delete user accounts. Supports account confirmation, authentication, authorization, password recovery, two-factor authentication with SMS. It also supports external login providers like Microsoft, Facebook, Google, etc.
   
 - Along with these features the Identity Core works with Entity Framework Core. It will provide you all the tables that are required to work with authentication and authorization.
 

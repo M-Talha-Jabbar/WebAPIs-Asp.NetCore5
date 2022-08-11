@@ -277,7 +277,7 @@ Note: Fluent API configurations have higher precedence than data annotation attr
 - Entity framework supports three types of queries:
   1. LINQ-to-Entities
       - LINQ-to-Entities queries operate on the entity set (DbSet type properties) to access the data from the underlying database.
-      - The DbSet class is derived from **IQuerable&lt;T&gt;** so thats why we can use LINQ for querying against DbSet.
+      - The **DbSet&lt;T&gt;** class is derived from **IQuerable&lt;T&gt;** so thats why we can use LINQ for querying against **DbSet&lt;T&gt;**.
   2. Entity SQL
   3. Native SQL
   

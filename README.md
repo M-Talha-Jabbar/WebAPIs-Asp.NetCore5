@@ -27,7 +27,7 @@ Reference: https://youtu.be/nuFITSg28ng
 Till here we have changed our Console app to Empty Web API Template we get by default.
 
 
-# Web API Application
+# ASP.NET Core Web API Application
 
 ## Controller Class
 - A controller class in Web API has a "Controller" suffix.
@@ -282,7 +282,7 @@ Note: Fluent API configurations have higher precedence than data annotation attr
   3. Native SQL
   
   
-# Identity
+# ASP.NET Core Identity
 -  It's a membership system. It allows us to create, read, update and delete user accounts. Supports account confirmation, authentication, authorization, password recovery, two-factor authentication with SMS. It also supports external login providers like Microsoft, Facebook, Google, etc.
   
 - Along with these features the Identity Core works with Entity Framework Core. It will provide you all the tables that are required to work with authentication and authorization.

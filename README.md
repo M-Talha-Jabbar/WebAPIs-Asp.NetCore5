@@ -102,6 +102,8 @@ Till here we have changed our Console app to Empty Web API Template we get by de
 ### 3. ActionResult&lt;T&gt; (ActionResult with Type)
 - It is the combination of ActionResult and Specific type.
 
+![HTTP Status Codes](https://github.com/M-Talha-Jabbar/WebAPIs-Asp.NetCore5/assets/76180043/3e335cee-3ae7-4faa-85a9-48ab34959e65)
+
 ## Model Binding
 - The process of binding the HTTP Request data to the parameters of application Controllers and Properties is known as Model Binding. (Note: Exact same name required for mapping)
 

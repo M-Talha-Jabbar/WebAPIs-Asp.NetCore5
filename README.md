@@ -303,6 +303,9 @@ These layers are implemented as separate projects.
 ## Structure of C# Program
 ![Structure of C# Program](https://github.com/M-Talha-Jabbar/WebAPIs-Asp.NetCore5/assets/76180043/4d60af89-daa8-4b7b-a128-aa599421eddd)
 
+## Operator Precedence & Associativity
+![Operator Precedence   Associativity](https://github.com/M-Talha-Jabbar/WebAPIs-Asp.NetCore5/assets/76180043/5fba1aca-403a-43a6-9452-d8c074b0613c)
+
 ## Exception Handling
 
 - There are two methods to handle the exception:
@@ -316,12 +319,16 @@ Note: In real-time programming, the first and foremost importance is always give
 
 - If we will use the super Exception class (i.e. used to handle all types of exceptions) when there is any relevant class available for that exception, it will kill the execution performance of the program.
 
-- It is always recommended to write a catch block with super Exception class as the last catch block even though we are writing multiple catch blocks for specific exceptions. It acts as a backup catch block.
+- It is always recommended to write a catch block with the super Exception class as the last catch block even though we are writing multiple catch blocks for specific exceptions. It acts as a backup catch block.
 
 - The keyword finally establishes a block that definitely executes statements placed in it irrespective of whether the exception has occurred or not, irrespective of whether the exception is handled or not in the catch block. 
 
-- Within the "finally" block we need to write the resource releasing logic or clean up the code such as un-referencing objects or closing connections.
+- Within the "finally" block we need to write the resource-releasing logic or clean up the code such as un-referencing objects or closing connections.
 
 - The exceptions are divided into two types such as:
   1. System Exception
   2. Application Exception (i.e. User-defined Exception)
+
+
+# .Net Core Platform
+

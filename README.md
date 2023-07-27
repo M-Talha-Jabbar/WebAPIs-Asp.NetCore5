@@ -297,6 +297,12 @@ These layers are implemented as separate projects.
 
 # C#
 
+## Data Types
+![Data Types](https://github.com/M-Talha-Jabbar/WebAPIs-Asp.NetCore5/assets/76180043/aac57e08-dfed-48e3-b9a8-a73b77eab725)
+
+## Structure of C# Program
+![Structure of C# Program](https://github.com/M-Talha-Jabbar/WebAPIs-Asp.NetCore5/assets/76180043/4d60af89-daa8-4b7b-a128-aa599421eddd)
+
 ## Exception Handling
 
 - There are two methods to handle the exception:

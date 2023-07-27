@@ -332,3 +332,4 @@ Note: In real-time programming, the first and foremost importance is always give
 
 # .Net Core Platform
 
+![Net Core Platform](https://github.com/M-Talha-Jabbar/WebAPIs-Asp.NetCore5/assets/76180043/0557eafb-7278-4ad7-ac36-4bc5859284fa)
